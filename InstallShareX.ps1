@@ -8,6 +8,7 @@
 
 #Check ShareX installation
 
+$Check = $null
 $Check = Select-String -Path "$env:PUBLIC\installed.log" -Pattern was -Quiet -SimpleMatch
 clear
 
