@@ -14,6 +14,7 @@ clear
 
 if($Check){
 Write-Host "SharX обнаружена повторная установка." -ForegroundColor Red
+Add-Content -Path $env:PUBLIC\installed.log -Value "$(Get-Date) - SheraX already installed."
 Get-Content $env:PUBLIC\installed.log
 Exit
 }
