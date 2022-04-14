@@ -4,7 +4,7 @@
 
     .NOTES
     Author: Gal A. A.
-    Web: https://sletat.ru/
+    
 #>
 
 
