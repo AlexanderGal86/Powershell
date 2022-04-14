@@ -1,4 +1,4 @@
-﻿#Author: a.gal86@ya.ru
+#Author: a.gal86@ya.ru
 #Adding in domain
 
 #Menu
@@ -92,5 +92,4 @@ While($answer.PingSucceeded -eq 'False')
 Write-Host('Новое имя: '+$n)
 
 #rename and add to domain
-Add-Computer -DomainName paris-nail.local -Confirm -Force -NewName $n -PassThru -Verbose -Restart
-pause
+Add-Computer -DomainName store.local -Confirm -Force -NewName $n -PassThru -Verbose -Restart
