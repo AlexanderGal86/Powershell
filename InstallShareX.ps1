@@ -3,7 +3,7 @@
     Install custom ShareX 
     
     .NOTES
-    Author: Gal A. A.
+    Author: Gal A.
 #>
 
 #Check ShareX installation
