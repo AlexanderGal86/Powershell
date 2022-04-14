@@ -5,12 +5,12 @@
     .NOTES
     Author: Gal A.
 #>
+$ErrorActionPreference= 'silentlycontinue'
 
 #Check ShareX installation
 
 $Check = $null
 $Check = Select-String -Path "$env:PUBLIC\installed.log" -Pattern was -Quiet -SimpleMatch
-clear
 
 if($Check){
 Write-Host "SharX обнаружена повторная установка." -ForegroundColor Red
@@ -30,21 +30,18 @@ if (!$ShareX){
     
     #Copy instalation files in temp
     Copy-Item -Path \\$env:userdnsdomain\SYSVOL\global\soft\ShareX -Destination $env:PUBLIC\temp\ -Recurse -Force
-    clear
 
     #Set local path
     Set-Location $env:PUBLIC\temp\ShareX
-    clear
 
     #run setup as admin
     powershell -command "Start-Process cmd -ArgumentList '/c cd /d %CD% && install.bat' -Verb runas"
     
     #Copy new configs
     Copy-Item $env:PUBLIC\temp\ShareX\conf\*  C:\ProgramData\ShareX\ -Force
-    clear
 
     #add log file
-    New-Item -Path $env:PUBLIC -Name "installed.log" -ItemType "file"  -Force
+    New-Item -Path $env:PUBLIC -Name "installed.log" -ItemType "file"
     Add-Content -Path $env:PUBLIC\installed.log -Value "$(Get-Date) - SheraX was installed."
     Get-Content $env:PUBLIC\installed.log
 }
@@ -61,21 +58,18 @@ else {
     
     #Copy instalation files in temp
     Copy-Item -Path \\$env:userdnsdomain\SYSVOL\global\soft\ShareX -Destination $env:PUBLIC\temp\ -Recurse -Force
-    clear
 
     #Set local path
     Set-Location $env:PUBLIC\temp\ShareX
-    clear
 
     #run setup as admin
     powershell -command "Start-Process cmd -ArgumentList '/c cd /d %CD% && install.bat' -Verb runas"
     
     #Copy new configs
     Copy-Item $env:PUBLIC\temp\ShareX\conf\*  C:\ProgramData\ShareX\ -Force
-    clear
 
     #add log file
-    New-Item -Path $env:PUBLIC -Name "installed.log" -ItemType "file"  -Force
+    New-Item -Path $env:PUBLIC -Name "installed.log" -ItemType "file"
     Add-Content -Path $env:PUBLIC\installed.log -Value "$(Get-Date) - SheraX conf was updated."
     Get-Content $env:PUBLIC\installed.log
 }
