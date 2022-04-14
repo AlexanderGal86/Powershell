@@ -1,6 +1,6 @@
 <#
     .SYNOPSIS
-    Install custome ShareX by gaal@sletat.ru
+    Install custome ShareX 
 
     .NOTES
     Author: Gal A. A.
