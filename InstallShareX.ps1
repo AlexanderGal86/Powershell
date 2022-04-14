@@ -1,6 +1,6 @@
 <#
     .SYNOPSIS
-    Install custome ShareX 
+    Install custom ShareX 
     
     .NOTES
     Author: Gal A. A.
