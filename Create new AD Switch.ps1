@@ -4,7 +4,7 @@
 
     .NOTES
     Author: Gal A. A.
-    Web: https://global.ru/
+    Web: 
 #>
 Add-type -AssemblyName System.Web
 Import-Module ActiveDirectory
@@ -186,9 +186,9 @@ $SamAccountName = Read-Host "`n`nEnter SamAccountName without:["$Domain"]`n`n"
 $EmailAddress = Read-Host "`n`nEnter FQDN for email adress`n`n"
 $Name = $GivenName+' '+$Surname
 $DisplayName = $Surname+' '+$GivenName
-$Description = [string]@(if ($menu -ge '2') {'Service'} 
+$Description = [string]@(if ($menu -lt '2') {'Service'} 
                 else {Read-Host "`n`nEnter description`n`n"})
-$Phone = [string]@(if ($menu -le '1') {Read-Host "`n`nEnter telephone number`n`n"} 
+$Phone = [string]@(if ($menu -gt '1') {Read-Host "`n`nEnter telephone number`n`n"} 
                 else {''})
 $UserPrincipalName = $SamAccountName+'@'+$Domain 
 $Manager = Read-Host "`n`nEnter Manager name(SAM)`n`n"
