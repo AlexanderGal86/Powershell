@@ -3,7 +3,7 @@
     AD entity creation Menu.
 
     .NOTES
-    Author: Gal A. A.
+    Author: Gal A. 
     Web: 
 #>
 Add-type -AssemblyName System.Web
